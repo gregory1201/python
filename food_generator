@@ -1,0 +1,36 @@
+import random
+print("\nWitaj!")
+
+print("Co chciałbyś dzisiaj zjeść? \nMasz do wyboru danie z makaronem lub z miesem :) \nAby kontynuowac wpisz makaron lub mieso")
+jedzenie = input()
+dostepne_jedzenie = ['mieso', 'makaron']
+dostepne_jedzenie2 =["kurczak" , "schab"]
+opcje_kurczak = ["butter chicken", "curry chicken", "nuggetsy"]
+opcje_schab = ["schabowe", "placek po wegiersku"]
+opcje_makaron = ["carbonara", 'spaghetti', "makaron z serem"]
+dodatki1 = ["ziemniaki", "warzywa"]
+opcje_ziemniak = ["ziemniakami gotowanymi", "ziemniaczkami w piekarniku"]
+opcje_warzywa = ["warzywami na parze", "warzywami smazonymi"]
+if jedzenie in dostepne_jedzenie:
+    if jedzenie == 'mieso':
+        print("Na jakie mieso masz ochote? Masz do wyboru kurczaka lub schab \nAby kontynuowac wpisz kurczak lub schab")
+        jedzenie2 = input()
+        print("Co chcialbys zjesc do tego? Masz do wyboru ziemniaki lub warzywa \nAby kontynuowac wpisz ziemniaki lub warzywa")
+        dodatki1 = input()
+        if jedzenie2 in dostepne_jedzenie2:
+            if jedzenie2 == 'kurczak' and dodatki1 == 'ziemniaki':
+                losowanie1 = random.choice(opcje_kurczak)
+                losowanie3 = random.choice(opcje_ziemniak)
+                print(f"Dzis wylosowalem dla ciebie {losowanie1} z {losowanie3}")
+            if jedzenie2 == 'kurczak' and dodatki1 == 'warzywa':
+                losowanie1 = random.choice(opcje_kurczak)
+                losowanie4 = random.choice(opcje_warzywa)
+                print(f"Dzis wylosowalem dla ciebie {losowanie1} z {losowanie4}")
+        if jedzenie2 == "schab":
+            losowanie2 = random.choice(opcje_schab)
+            print(f"Dzis wylosowalem dla ciebie {losowanie2}")
+    if jedzenie == 'makaron':
+        losowanie3 = random.choice(opcje_makaron)
+        print(f"Dzis wylosowalem dla ciebie {losowanie3}")
+else:
+    print("nie mamy takiego dania :(")
